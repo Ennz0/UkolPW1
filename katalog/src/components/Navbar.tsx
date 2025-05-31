@@ -1,30 +1,28 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
   return (
     <nav className="navbar bg-base-200 shadow-sm">
-      {/* Dropdown menu - úplně vlevo */}
       <div className="flex-none">
         <div className="dropdown dropdown-hover">
           <div tabIndex={0} role="button" className="btn btn-square btn-ghost">
-            {/* Ikona pro dropdown, například hamburger */}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </div>
           <ul tabIndex={0} className="dropdown-content menu bg-base-200 rounded-box z-[1] w-64 p-2 shadow-sm -ml-2">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
+          <li><Link href="/gallery">Gallery</Link></li>
+          <li><Link href="/about">About</Link></li>
+          <li><Link href="/contacts">Contact</Link></li>
           </ul>
         </div>
       </div>
 
-      {/* Název "Sneaker Gallery" - uprostřed */}
       <div className="flex-1 px-4">
         <span className="text-xl font-bold">Sneaker Gallery</span>
       </div>
 
-      {/* Theme controller - úplně vpravo */}
       <div className='px-4 flex-none'>
         <label className="toggle text-base-content">
           <input type="checkbox" value="pastel" className="theme-controller" />

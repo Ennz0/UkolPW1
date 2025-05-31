@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Navbar from '@/components/Navbar'
+import Image from 'next/image'
 
 const homePage = () => {
   return (
@@ -8,7 +10,7 @@ const homePage = () => {
       <div className="flex justify-center gap-8 my-8 flex-wrap">
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/paris.avif" alt="Nike SB Dunk Low Paris" className="h-64  w-full object-cover" />
+            <Image src="/images/paris.avif" alt="Nike SB Dunk Low Paris" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">Nike SB Dunk Low "Paris"
@@ -25,7 +27,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/chicago.avif" alt="Air Jordan 1 Retro High OG x Off-White Chicago" className="h-64  w-full object-cover" />
+            <Image src="/images/chicago.avif" alt="Air Jordan 1 Retro High OG x Off-White Chicago" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">AJ1 x Off-White "Chicago"
@@ -42,7 +44,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/future.avif" alt="Nike Air Mag Back to the Future" className="h-64  w-full object-cover" />
+            <Image src="/images/future.avif" alt="Nike Air Mag Back to the Future" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">Nike Air Mag "Back to the Future"
@@ -59,7 +61,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/pidgeon.avif" alt="Nike SB Dunk Low Staple Pigeon" className="h-64  w-full object-cover" />
+            <Image src="/images/pigeon.avif" alt="Nike SB Dunk Low Staple Pigeon" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">Nike SB Dunk Low "Pigeon"
@@ -76,7 +78,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/travissail.avif" alt="Nike Air Force 1 Low Travis Scott Sail" className="h-64   w-full object-cover" />
+            <Image src="/images/travissail.avif" alt="Nike Air Force 1 Low Travis Scott Sail" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">AF1 x Travis Scott "Sail"
@@ -93,7 +95,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/kaws.avif" alt="Air Jordan 4 Retro x Kaws Grey" className="h-64   w-full object-cover" />
+            <Image src="/images/kaws.avif" alt="Air Jordan 4 Retro x Kaws Grey" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">AJ4 x KAWS "Grey"
@@ -110,7 +112,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/kanye.avif" alt="Nike Air Yeezy 2 Red October" className="h-64  w-full object-cover" />
+            <Image src="/images/kanye.avif" alt="Nike Air Yeezy 2 Red October" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">Nike Air Yeezy 2 "Red October"
@@ -127,7 +129,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/skunk.avif" alt="Nike SB Dunk High Skunk" className="h-64   w-full object-cover" />
+            <Image src="/images/skunk.avif" alt="Nike SB Dunk High Skunk" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">Nike SB Dunk High "Skunk"
@@ -144,7 +146,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/concord.avif" alt="Nike Air Jordan 11 Retro Concord" className="h-64  w-full object-cover" />
+            <Image src="/images/concord.avif" alt="Nike Air Jordan 11 Retro Concord" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">AJ11 "Concord"
@@ -161,7 +163,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/elephant.avif" alt="Nike Air Max 1 Atmos Elephant" className="h-64  w-full object-cover" />
+            <Image src="/images/elephant.avif" alt="Nike Air Max 1 Atmos Elephant" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">Air Max 1 x Atmos "Elephant"
@@ -178,7 +180,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/freddy.avif" alt="Nike SB Dunk Low Freddy Krueger" className="h-64  w-full object-cover" />
+            <Image src="/images/freddy.avif" alt="Nike SB Dunk Low Freddy Krueger" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">Nike SB Dunk Low "Freddy Krueger"
@@ -195,7 +197,7 @@ const homePage = () => {
 
         <div className="card bg-base-300 w-96 shadow-sm">
           <figure>
-            <img src="images/lv.avif" alt="Nike Air Force 1 Low Louis Vuitton" className="h-64   w-full object-cover" />
+            <Image src="/images/lv.avif" alt="Nike Air Force 1 Low Louis Vuitton" width={384} height={256} className="h-64 w-full object-cover" />
           </figure>
           <div className="card-body h-48">
             <h2 className="card-title">AF1 x Louis Vuitton

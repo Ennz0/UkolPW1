@@ -18,7 +18,7 @@ export default function Home() {
         extensive collection of sneakers from top brands and find your perfect
         pair.
       </p>
-      <Link href="/home"><button className="btn btn-primary">Explore</button></Link>
+      <Link href="/gallery"><button className="btn btn-primary">Explore</button></Link>
     </div>
   </div>
 </div>
