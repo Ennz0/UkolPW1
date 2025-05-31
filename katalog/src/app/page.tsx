@@ -6,7 +6,7 @@ export default function Home() {
   className="hero min-h-screen bg-center bg"
   style={{
     backgroundImage:
-      "url('/hero.jpg')",
+      "url('images/hero.jpg')",
   }}
 >
   <div className="hero-overlay"></div>
