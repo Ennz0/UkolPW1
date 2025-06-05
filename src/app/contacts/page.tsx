@@ -1,5 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
+import TextBox from '@/components/TextBox';
+import { contactInfoData } from '@/utils/data';
 
 const Contact = () => {
   return (
@@ -18,52 +20,33 @@ const Contact = () => {
           <div className="flex-1 w-full lg:w-1/2 bg-[#1e151d] p-8 rounded-xl shadow-xl text-[#c59f61]">
             <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
             <form>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-[#c59f61] mb-1">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="John Pork"
-                  className="w-full px-4 py-2 rounded-lg bg-[#261b25] border border-[#c59f61] focus:outline-none focus:ring-2 focus:ring-[#db924c] focus:border-[#db924c] text-[#c59f61]"
-                />
-              </div>
+              <TextBox
+                id="name"
+                label="Your Name"
+                type="text"
+                placeholder="John Pork"
+              />
 
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-[#c59f61] mb-1">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="john.pork@skibidi.com"
-                  className="w-full px-4 py-2 rounded-lg bg-[#261b25] border border-[#c59f61] focus:outline-none focus:ring-2 focus:ring-[#db924c] focus:border-[#db924c] text-[#c59f61]"
-                />
-              </div>
+              <TextBox
+                id="email"
+                label="Your Email"
+                type="email"
+                placeholder="john.pork@skibidi.com"
+              />
 
-              <div className="mb-4">
-                <label htmlFor="subject" className="block text-sm font-medium text-[#c59f61] mb-1">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  placeholder="Regarding our sneaker gallery..."
-                  className="w-full px-4 py-2 rounded-lg bg-[#261b25] border border-[#c59f61] focus:outline-none focus:ring-2 focus:ring-[#db924c] focus:border-[#db924c] text-[#c59f61]"
-                />
-              </div>
+              <TextBox
+                id="subject"
+                label="Subject"
+                type="text"
+                placeholder="Regarding our sneaker gallery..."
+              />
 
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-[#c59f61] mb-1">
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  className="w-full px-4 py-2 rounded-lg bg-[#261b25] border border-[#c59f61] focus:outline-none focus:ring-2 focus:ring-[#db924c] focus:border-[#db924c] h-32 text-[#c59f61] resize-y"
-                  placeholder="Type your message here..."
-                ></textarea>
-              </div>
+              <TextBox
+                id="message"
+                label="Your Message"
+                type="textarea"
+                placeholder="Type your message here..."
+              />
 
               <div className="mt-6">
                 <button type="submit" className="w-full px-6 py-3 rounded-lg bg-[#db924c] text-black font-semibold hover:bg-[#c37d35] transition-colors duration-200">
@@ -77,31 +60,31 @@ const Contact = () => {
             <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
             <div className="mb-4">
               <h3 className="text-xl font-semibold">Address:</h3>
-              <p className="text-[#c59f61]">123 Sneaker St.</p>
-              <p className="text-[#c59f61]">Sneaker City, SC 12345</p>
-              <p className="text-[#c59f61]">Country</p>
+              <p className="text-[#c59f61]">{contactInfoData.address.street}</p>
+              <p className="text-[#c59f61]">{contactInfoData.address.city}, {contactInfoData.address.zip}</p>
+              <p className="text-[#c59f61]">{contactInfoData.address.country}</p>
             </div>
             <div className="mb-4">
               <h3 className="text-xl font-semibold">Phone:</h3>
-              <p className="text-[#c59f61]">+1 (555) 123-4567</p>
+              <p className="text-[#c59f61]">{contactInfoData.phone}</p>
             </div>
             <div className="mb-4">
               <h3 className="text-xl font-semibold">Email:</h3>
               <p>
-                <a href="mailto:info@example.com" className="text-[#db924c] hover:underline">info@example.com</a>
+                <a href={`mailto:${contactInfoData.email}`} className="text-[#db924c] hover:underline">{contactInfoData.email}</a>
               </p>
             </div>
             <div className="mb-4">
               <h3 className="text-xl font-semibold">Business Hours:</h3>
-              <p className="text-[#c59f61]">Monday - Friday: 9:00 AM - 5:00 PM</p>
-              <p className="text-[#c59f61]">Saturday: 10:00 AM - 2:00 PM</p>
-              <p className="text-[#c59f61]">Sunday: Closed</p>
+              {contactInfoData.businessHours.map((hour, index) => (
+                <p key={index} className="text-[#c59f61]">{hour.days}: {hour.time}</p>
+              ))}
             </div>
 
             <h3 className="text-xl font-semibold mt-8 mb-4">Find Us on the Map:</h3>
             <div className="w-full h-64 rounded-xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5064.271306930894!2d165.96307429607987!3d-50.60601681204794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa9b37960d3cdddd7%3A0xbd1bca4ab10f2187!2sDisappointment%20Island!5e0!3m2!1sen!2scz!4v1749138291349!5m2!1sen!2scz"
+                src={contactInfoData.mapEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

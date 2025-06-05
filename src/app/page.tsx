@@ -6,7 +6,7 @@ export default function Home() {
     <div
       className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-center"
       style={{
-        backgroundImage: "url('images/hero.jpg')",
+        backgroundImage: "url('/images/hero.jpg')",
       }}
     >
       <div className="absolute inset-0 bg-[#120c12] opacity-50"></div>

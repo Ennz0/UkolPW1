@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <>
       <Navbar />
-      <div className="pt-[64px] lg:pt-[64px]"> 
+      <div className="pt-[64px] lg:pt-[64px]">
         <AboutHeroClient />
       </div>
     </>

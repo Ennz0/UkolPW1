@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { aboutContent } from '@/utils/data';
 
 const AboutHeroClient = () => {
   const [showFullContent, setShowFullContent] = useState(false);
@@ -31,9 +32,9 @@ const AboutHeroClient = () => {
         <div className="flex flex-grow justify-center items-center min-h-[calc(100vh-64px)] px-4">
           <div className="w-full max-w-6xl mx-auto p-12 rounded-2xl shadow-xl bg-[#1e151d] text-[#c59f61] text-center my-8">
             <div className="max-w-md mx-auto">
-              <h1 className="text-5xl font-bold mb-4">About Our Sneaker Gallery</h1>
+              <h1 className="text-5xl font-bold mb-4">{aboutContent.heroTitle}</h1>
               <p className="py-6 text-md text-[#c59f61]">
-                Welcome to the ultimate destination for sneaker enthusiasts! We are passionate about curating and showcasing the most iconic, rare, and legendary sneakers from around the world.
+                {aboutContent.heroParagraph}
               </p>
               <button
                 className="px-4.25 py-2.5 rounded-lg bg-[#db924c] text-black text-sm font-semibold hover:bg-[#c37d35] transition-colors duration-200 mt-2 mb-4"
@@ -48,9 +49,9 @@ const AboutHeroClient = () => {
         <div className="container mx-auto p-4">
           <div className="w-full max-w-6xl mx-auto p-12 rounded-2xl shadow-xl bg-[#1e151d] text-[#c59f61] text-center my-8">
             <div className="max-w-md mx-auto">
-              <h1 className="text-5xl font-bold mb-4">About Our Sneaker Gallery</h1>
+              <h1 className="text-5xl font-bold mb-4">{aboutContent.heroTitle}</h1>
               <p className="py-6 text-md text-[#c59f61]">
-                Welcome to the ultimate destination for sneaker enthusiasts! We are passionate about curating and showcasing the most iconic, rare, and legendary sneakers from around the world.
+                {aboutContent.heroParagraph}
               </p>
               <button
                 className="px-4.25 py-2.5 rounded-lg bg-[#db924c] text-black text-sm font-semibold hover:bg-[#c37d35] transition-colors duration-200 mt-2 mb-[8px]"
@@ -73,44 +74,44 @@ const AboutHeroClient = () => {
                 />
               </div>
               <div className="lg:w-1/2 text-center lg:text-left">
-                <h2 className="text-4xl font-bold mb-4">Our Passion & Vision</h2>
+                <h2 className="text-4xl font-bold mb-4">{aboutContent.passionVisionTitle}</h2>
                 <p className="text-lg mb-4 text-[#c59f61]">
-                  Our journey began with a simple love for sneakers and the stories they tell. From the groundbreaking designs to the cultural impact, each pair holds a unique place in history. We strive to be a comprehensive resource, connecting collectors and fans with the history and artistry of footwear.
+                  {aboutContent.passionVisionParagraph1}
                 </p>
                 <p className="text-lg text-[#c59f61]">
-                  We believe that sneakers are more than just shoes; they are a form of self-expression, a piece of art, and a reflection of diverse cultures. Our vision is to foster a vibrant community where this passion can be shared and celebrated.
+                  {aboutContent.passionVisionParagraph2}
                 </p>
               </div>
             </div>
 
-            <h2 className="text-4xl font-bold text-center my-12 text-[#c59f61]">Our Core Values</h2>
+            <h2 className="text-4xl font-bold text-center my-12 text-[#c59f61]">{aboutContent.valuesTitle}</h2>
             <div className="flex justify-center gap-8 my-8 flex-wrap">
               <div className="relative w-80 flex flex-col justify-end p-6 rounded-2xl shadow-xl overflow-hidden bg-[#1e151d] text-white">
                 <div className="relative z-10">
-                  <h3 className="text-lg font-semibold mb-2">Authenticity</h3>
-                  <p className="text-sm text-gray-300 mb-1.75">We are committed to showcasing only genuine and verified sneakers.</p>
+                  <h3 className="text-lg font-semibold mb-2">{aboutContent.valueAuthenticityTitle}</h3>
+                  <p className="text-sm text-gray-300 mb-1.75">{aboutContent.valueAuthenticityDescription}</p>
                   <div className="flex justify-end">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full border border-current text-white">Trust</span>
+                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full border border-current text-white">{aboutContent.valueAuthenticityTag}</span>
                   </div>
                 </div>
               </div>
 
               <div className="relative w-80 flex flex-col justify-end p-6 rounded-2xl shadow-xl overflow-hidden bg-[#1e151d] text-white">
                 <div className="relative z-10">
-                  <h3 className="text-lg font-semibold mb-2">Community</h3>
-                  <p className="text-sm text-gray-300 mb-1.75">Fostering a passionate and inclusive space for all sneakerheads.</p>
+                  <h3 className="text-lg font-semibold mb-2">{aboutContent.valueCommunityTitle}</h3>
+                  <p className="text-sm text-gray-300 mb-1.75">{aboutContent.valueCommunityDescription}</p>
                   <div className="flex justify-end">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full border border-current text-white">Share</span>
+                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full border border-current text-white">{aboutContent.valueCommunityTag}</span>
                   </div>
                 </div>
               </div>
 
               <div className="relative w-80 flex flex-col justify-end p-6 rounded-2xl shadow-xl overflow-hidden bg-[#1e151d] text-white">
                 <div className="relative z-10">
-                  <h3 className="text-lg font-semibold mb-2">Passion</h3>
-                  <p className="text-sm text-gray-300 mb-1.75">Driven by an unwavering love for sneaker culture and history.</p>
+                  <h3 className="text-lg font-semibold mb-2">{aboutContent.valuePassionTitle}</h3>
+                  <p className="text-sm text-gray-300 mb-1.75">{aboutContent.valuePassionDescription}</p>
                   <div className="flex justify-end">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full border border-current text-white">Love</span>
+                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full border border-current text-white">{aboutContent.valuePassionTag}</span>
                   </div>
                 </div>
               </div>
@@ -119,9 +120,9 @@ const AboutHeroClient = () => {
             <div className="w-full max-w-6xl mx-auto p-4 rounded-2xl shadow-xl bg-[#120a11] text-[#c59f61] my-11">
               <div className="flex flex-col lg:flex-row-reverse items-center py-8">
                 <div className="text-center lg:text-left lg:ml-8">
-                  <h2 className="text-4xl font-bold mb-4">Join Our Sneaker Journey!</h2>
+                  <h2 className="text-4xl font-bold mb-4">{aboutContent.ctaTitle}</h2>
                   <p className="py-6 text-md text-[#c59f61]">
-                    Explore our extensive gallery, learn about the stories behind each pair, and connect with fellow enthusiasts.
+                    {aboutContent.ctaParagraph}
                   </p>
                   <Link href="/gallery">
                     <button className="px-4.25 py-2.5 rounded-lg bg-[#273e3f] text-white text-sm font-semibold hover:bg-[#1d2f30] transition-colors duration-200 mb-8">
