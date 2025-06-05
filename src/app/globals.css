@@ -2,6 +2,6 @@
 @plugin "daisyui"{
   themes: coffee --default;
 }
-.bg-hero-image {
-  background-image: url('/images/hero.jpg');
+html{
+  background-color: #261b25
 }

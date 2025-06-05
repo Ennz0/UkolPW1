@@ -6,7 +6,7 @@ interface SneakerCardProps {
   imageAlt: string;
   title: string;
   badgeText: string;
-  badgeTailwindColor: string;
+  badgeColor: string;
   description: string;
   tags: string[];
 }
@@ -16,7 +16,7 @@ const SneakerCard: React.FC<SneakerCardProps> = ({
   imageAlt,
   title,
   badgeText,
-  badgeTailwindColor,
+  badgeColor,
   description,
   tags,
 }) => {
@@ -34,7 +34,7 @@ const SneakerCard: React.FC<SneakerCardProps> = ({
       <div className="flex flex-col p-4 h-48 justify-between">
         <h2 className="text-xl font-semibold mb-2 flex items-center justify-between text-[#db924c]">
           {title}
-          <span className={`ml-2 px-3.75 py-0.5 text-sm font-semibold rounded-full ${badgeTailwindColor} text-[#1b1b1b]`}>
+          <span className={`ml-2 px-3.75 py-0.5 text-sm font-semibold rounded-full ${badgeColor} text-[#1b1b1b]`}>
             {badgeText}
           </span>
         </h2>

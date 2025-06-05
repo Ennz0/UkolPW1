@@ -16,7 +16,7 @@ const GalleryPage = () => {
             imageAlt={sneaker.imageAlt}
             title={sneaker.title}
             badgeText={sneaker.badgeText}
-            badgeTailwindColor={sneaker.badgeTailwindColor}
+            badgeColor={sneaker.badgeColor}
             description={sneaker.description}
             tags={sneaker.tags}
           />
