@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import SneakerCard from '@/components/SneakerCard';
 import { sneakersData } from '@/utils/data';
+import Footer from '@/components/Footer';
 
 const GalleryPage = () => {
   return (
@@ -21,6 +22,7 @@ const GalleryPage = () => {
           />
         ))}
       </div>
+      <Footer />
     </>
   );
 };

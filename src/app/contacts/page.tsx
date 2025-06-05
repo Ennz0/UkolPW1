@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import TextBox from '@/components/TextBox';
 import { contactInfoData } from '@/utils/data';
+import Footer from '@/components/Footer';
 
 const Contact = () => {
   return (
@@ -98,6 +99,7 @@ const Contact = () => {
         </div>
 
       </div>
+      <Footer />
     </>
   );
 };
