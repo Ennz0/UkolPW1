@@ -4,7 +4,7 @@ export interface Sneaker {
   imageAlt: string;
   title: string;
   badgeText: string;
-  badgeTailwindColor: string;
+  badgeColor: string;
   description: string;
   tags: string[];
   // price: number;
