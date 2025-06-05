@@ -1,4 +1,3 @@
-// app/components/SneakerCard.tsx
 import React from 'react';
 import Image from 'next/image';
 
@@ -7,7 +6,7 @@ interface SneakerCardProps {
   imageAlt: string;
   title: string;
   badgeText: string;
-  badgeTailwindColor: string; // e.g., 'bg-red-500'
+  badgeTailwindColor: string;
   description: string;
   tags: string[];
 }
@@ -22,34 +21,29 @@ const SneakerCard: React.FC<SneakerCardProps> = ({
   tags,
 }) => {
   return (
-    // Replaced DaisyUI 'card' with Tailwind classes
-    <div className="relative flex flex-col rounded-box border-1 overflow-hidden shadow-sm bg-[#180c14] w-96">
+    <div className="relative flex flex-col rounded-box overflow-hidden shadow-sm bg-[#120a11] w-96">
       <figure className="relative w-full h-64 overflow-hidden">
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={384} // Equivalent to w-96 (384px)
-          height={256} // Equivalent to h-64 (256px)
-          className="object-cover w-full h-full" // Ensure image covers the fig
+          width={384}
+          height={256}
+          className="object-cover w-full h-full"
         />
       </figure>
-      {/* Replaced 'card-body' with Tailwind classes */}
       <div className="flex flex-col p-4 h-48 justify-between">
-        <h2 className="text-xl font-semibold mb-2 flex items-center justify-between text-white"> {/* Text white for contrast */}
+        <h2 className="text-xl font-semibold mb-2 flex items-center justify-between text-[#db924c]">
           {title}
-          {/* Replaced DaisyUI 'badge' with Tailwind classes */}
-          <span className={`ml-2 px-2 py-1 text-xs font-bold rounded-full ${badgeTailwindColor} text-white`}>
+          <span className={`ml-2 px-3.75 py-0.5 text-sm font-semibold rounded-full ${badgeTailwindColor} text-[#1b1b1b]`}>
             {badgeText}
           </span>
         </h2>
-        <p className="text-sm text-gray-300 flex-grow mb-4"> {/* Text gray for description */}
+        <p className="text-sm text-[#db924c] flex-grow mb-4">
           {description}
         </p>
-        {/* Replaced 'card-actions' with Tailwind classes */}
         <div className="flex flex-wrap gap-2 justify-end">
           {tags.map((tag, index) => (
-            // Replaced DaisyUI 'badge-outline' with Tailwind classes
-            <span key={index} className="border border-gray-500 text-gray-400 px-2 py-1 text-xs rounded-full">
+            <span key={index} className="border border-[#e09c5b] text-[#db924c] px-2 py-1 text-xs rounded-full">
               {tag}
             </span>
           ))}

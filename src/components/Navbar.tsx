@@ -1,75 +1,39 @@
-// app/components/Navbar.tsx
-"use client"; // Needs to be a client component for state and event listeners
+"use client";
 
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [theme, setTheme] = useState('dark'); // 'dark' or 'light' for Tailwind
 
-  // Handle dropdown open/close
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const handleMouseEnter = () => {
+    setIsDropdownOpen(true);
   };
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isDropdownOpen && !(event.target as HTMLElement).closest('.navbar-dropdown-container')) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isDropdownOpen]);
-
-  // Handle theme toggle
-  useEffect(() => {
-    // Set initial theme based on localStorage or system preference
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.classList.add(storedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-    } else {
-      setTheme('light');
-      document.documentElement.classList.add('light');
-    }
-  }, []);
-
-  const handleThemeToggle = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.remove(theme);
-    document.documentElement.classList.add(newTheme);
+  const handleMouseLeave = () => {
+    setIsDropdownOpen(false);
   };
 
   return (
-    // Replaced 'navbar bg-base-200 shadow-sm' with Tailwind classes
-    <nav className="flex items-center justify-between px-4 py-3 bg-[#1e151d] shadow-sm text-gray-100">
-      <div className="relative navbar-dropdown-container"> {/* Container for dropdown positioning */}
-        {/* Replaced 'btn btn-square btn-ghost' with Tailwind classes */}
+    <nav className="fixed top-0 left-0 right-0 w-full z-50 flex items-center justify-between px-4 py-[10.75px] bg-[#1a1219] shadow-sm text-[#c59f61]">
+      <div
+        className="relative navbar-dropdown-container"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <button
-          onClick={toggleDropdown}
-          className="p-2 rounded-md hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500"
+          className="p-2 rounded-md hover:bg-[#120a11]"
           aria-label="Toggle navigation menu"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-6 w-6 stroke-current">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
-        {/* Replaced 'dropdown-content menu bg-base-200 rounded-box z-[1] w-64 p-2 shadow-sm -ml-2' */}
         {isDropdownOpen && (
-          <ul className="absolute top-full left-0 mt-2 w-64 p-2 rounded-md shadow-lg bg-zinc-800 z-10">
-            <li><Link href="/gallery" className="block px-4 py-2 hover:bg-zinc-700 rounded-md">Gallery</Link></li>
-            <li><Link href="/about" className="block px-4 py-2 hover:bg-zinc-700 rounded-md">About</Link></li>
-            <li><Link href="/contacts" className="block px-4 py-2 hover:bg-zinc-700 rounded-md">Contact</Link></li>
+          <ul className="absolute text-sm top-full left-0 -ml-4 w-64 p-2 rounded-2xl shadow-lg bg-[#1a1219] z-10">
+            <li><Link href="/gallery" className="block px-4 py-2 hover:bg-[#c59f6123] rounded-lg">Gallery</Link></li>
+            <li><Link href="/about" className="block px-4 py-2 hover:bg-[#c59f6123] rounded-lg">About</Link></li>
+            <li><Link href="/contacts" className="block px-4 py-2 hover:bg-[#c59f6123] rounded-lg">Contact</Link></li>
           </ul>
         )}
       </div>
@@ -79,7 +43,6 @@ const Navbar = () => {
       </div>
 
       <div className="flex-none">
-        {/* Replaced DaisyUI 'toggle' with custom Tailwind toggle */}
       </div>
     </nav>
   );

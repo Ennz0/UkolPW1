@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui"{
-  themes: coffee --prefersdark, pastel --default;
+  themes: coffee --default;
 }
 .bg-hero-image {
   background-image: url('/images/hero.jpg');

@@ -1,4 +1,3 @@
-// This file is a Server Component by default
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import AboutHeroClient from '@/components/AboutHeroClient';
@@ -7,7 +6,9 @@ const AboutPage = () => {
   return (
     <>
       <Navbar />
-      <AboutHeroClient />
+      <div className="pt-[64px] lg:pt-[64px]"> 
+        <AboutHeroClient />
+      </div>
     </>
   );
 };

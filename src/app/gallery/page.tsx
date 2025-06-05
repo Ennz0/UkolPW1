@@ -1,8 +1,7 @@
-// app/gallery/page.tsx
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import SneakerCard from '@/components/SneakerCard'; // Import the new component
+import SneakerCard from '@/components/SneakerCard';
 
 const GalleryPage = () => {
   const sneakers = [
@@ -11,7 +10,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike SB Dunk Low Paris',
       title: 'Nike SB Dunk Low "Paris"',
       badgeText: 'ULTRA RARE',
-      badgeTailwindColor: 'bg-red-700', // Example Tailwind red
+      badgeTailwindColor: 'bg-error',
       description: 'Extrémně vzácná edice inspirovaná uměleckou scénou Paříže.',
       tags: ['Dunk SB', 'Limited', 'Art'],
     },
@@ -20,7 +19,7 @@ const GalleryPage = () => {
       imageAlt: 'Air Jordan 1 Retro High OG x Off-White Chicago',
       title: 'AJ1 x Off-White "Chicago"',
       badgeText: 'GRAIL',
-      badgeTailwindColor: 'bg-green-700', // Example Tailwind green
+      badgeTailwindColor: 'bg-success',
       description: 'Jedna z nejžádanějších kolaborací Virgil Abloh x Jordan Brand.',
       tags: ['Jordan 1', 'Off-White', 'Kolekce'],
     },
@@ -29,7 +28,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike Air Mag Back to the Future',
       title: 'Nike Air Mag "Back to the Future"',
       badgeText: 'ICONIC',
-      badgeTailwindColor: 'bg-blue-700', // Example Tailwind blue
+      badgeTailwindColor: 'bg-info',
       description: 'Futuristické boty s automatickým šněrováním z filmu Návrat do budoucnosti.',
       tags: ['Film', 'Technologie', 'Limitovaná edice'],
     },
@@ -38,7 +37,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike SB Dunk Low Staple Pigeon',
       title: 'Nike SB Dunk Low "Pigeon"',
       badgeText: 'LEGENDARY',
-      badgeTailwindColor: 'bg-amber-700', // Example Tailwind amber
+      badgeTailwindColor: 'bg-warning',
       description: 'Kontroverzní release, který v roce 2005 rozpoutal šílenství v ulicích NYC.',
       tags: ['Dunk SB', 'New York', 'Historie'],
     },
@@ -47,7 +46,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike Air Force 1 Low Travis Scott Sail',
       title: 'AF1 x Travis Scott "Sail"',
       badgeText: 'COLLAB',
-      badgeTailwindColor: 'bg-red-700',
+      badgeTailwindColor: 'bg-error',
       description: 'Vyhledávaná kolaborace Air Force 1 s raperem Travisem Scottem.',
       tags: ['Air Force 1', 'Travis Scott', 'Hyped'],
     },
@@ -56,7 +55,7 @@ const GalleryPage = () => {
       imageAlt: 'Air Jordan 4 Retro x Kaws Grey',
       title: 'AJ4 x KAWS "Grey"',
       badgeText: 'ART EDITION',
-      badgeTailwindColor: 'bg-green-700',
+      badgeTailwindColor: 'bg-success',
       description: 'Umělecká kolaborace Air Jordan 4 s proslulým umělcem KAWS.',
       tags: ['Jordan 4', 'KAWS', 'Street Art'],
     },
@@ -65,7 +64,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike Air Yeezy 2 Red October',
       title: 'Nike Air Yeezy 2 "Red October"',
       badgeText: 'HISTORIC',
-      badgeTailwindColor: 'bg-blue-700',
+      badgeTailwindColor: 'bg-info',
       description: 'Poslední a nejtajemnější release Kanyeho s Nike, vzácný kousek.',
       tags: ['Yeezy', 'Kanye West', 'OG'],
     },
@@ -74,7 +73,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike SB Dunk High Skunk',
       title: 'Nike SB Dunk High "Skunk"',
       badgeText: 'FIRE ASF',
-      badgeTailwindColor: 'bg-amber-700',
+      badgeTailwindColor: 'bg-warning',
       description: 'Kultovní Dunk High inspirovaný konopím, oblíbený mezi sběrateli.',
       tags: ['Dunk SB', '420', 'Rare'],
     },
@@ -83,7 +82,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike Air Jordan 11 Retro Concord',
       title: 'AJ11 "Concord"',
       badgeText: 'BASKETBALL LEGEND',
-      badgeTailwindColor: 'bg-red-700',
+      badgeTailwindColor: 'bg-error',
       description: 'Ikonická bota, ve které Michael Jordan hrál po návratu do NBA.',
       tags: ['Jordan 11', 'NBA', 'MJ'],
     },
@@ -92,7 +91,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike Air Max 1 Atmos Elephant',
       title: 'Air Max 1 x Atmos "Elephant"',
       badgeText: 'COLLAB',
-      badgeTailwindColor: 'bg-green-700',
+      badgeTailwindColor: 'bg-success',
       description: 'Slavná kolaborace s japonským obchodem Atmos, známá pro svůj "elephant print".',
       tags: ['Air Max 1', 'Atmos', 'Print'],
     },
@@ -101,7 +100,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike SB Dunk Low Freddy Krueger',
       title: 'Nike SB Dunk Low "Freddy Krueger"',
       badgeText: 'HORROR',
-      badgeTailwindColor: 'bg-blue-700',
+      badgeTailwindColor: 'bg-info',
       description: 'Velmi vzácný a kontroverzní model inspirovaný filmovou postavou.',
       tags: ['Dunk SB', 'Horror', 'Unreleased'],
     },
@@ -110,7 +109,7 @@ const GalleryPage = () => {
       imageAlt: 'Nike Air Force 1 Low Louis Vuitton',
       title: 'AF1 x Louis Vuitton',
       badgeText: 'LUXURY',
-      badgeTailwindColor: 'bg-amber-700',
+      badgeTailwindColor: 'bg-warning',
       description: 'Exkluzivní a luxusní kolaborace mezi Nike a Louis Vuitton.',
       tags: ['Air Force 1', 'Louis Vuitton', 'Haute Couture'],
     },
@@ -118,8 +117,8 @@ const GalleryPage = () => {
 
   return (
     <>
-      <Navbar /> {/* Navbar still uses DaisyUI for now */}
-      <div className="flex justify-center gap-8 my-8 flex-wrap">
+      <Navbar />
+      <div className="mt-[96px] flex justify-center gap-8 my-8 flex-wrap">
         {sneakers.map((sneaker, index) => (
           <SneakerCard
             key={index}
@@ -127,7 +126,7 @@ const GalleryPage = () => {
             imageAlt={sneaker.imageAlt}
             title={sneaker.title}
             badgeText={sneaker.badgeText}
-            badgeTailwindColor={sneaker.badgeTailwindColor} // Updated prop name
+            badgeTailwindColor={sneaker.badgeTailwindColor}
             description={sneaker.description}
             tags={sneaker.tags}
           />
