@@ -2,3 +2,6 @@
 @plugin "daisyui"{
   themes: coffee --prefersdark, pastel --default;
 }
+.bg-hero-image {
+  background-image: url('/images/hero.jpg');
+}

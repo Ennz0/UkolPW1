@@ -1,34 +1,85 @@
+// app/components/Navbar.tsx
+"use client"; // Needs to be a client component for state and event listeners
+
 import Link from 'next/link';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [theme, setTheme] = useState('dark'); // 'dark' or 'light' for Tailwind
+
+  // Handle dropdown open/close
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isDropdownOpen && !(event.target as HTMLElement).closest('.navbar-dropdown-container')) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
+
+  // Handle theme toggle
+  useEffect(() => {
+    // Set initial theme based on localStorage or system preference
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+      document.documentElement.classList.add(storedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+      document.documentElement.classList.add('dark');
+    } else {
+      setTheme('light');
+      document.documentElement.classList.add('light');
+    }
+  }, []);
+
+  const handleThemeToggle = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.remove(theme);
+    document.documentElement.classList.add(newTheme);
+  };
+
   return (
-    <nav className="navbar bg-base-200 shadow-sm">
-      <div className="flex-none">
-        <div className="dropdown dropdown-hover">
-          <div tabIndex={0} role="button" className="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </div>
-          <ul tabIndex={0} className="dropdown-content menu bg-base-200 rounded-box z-[1] w-64 p-2 shadow-sm -ml-2">
-          <li><Link href="/gallery">Gallery</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li><Link href="/contacts">Contact</Link></li>
+    // Replaced 'navbar bg-base-200 shadow-sm' with Tailwind classes
+    <nav className="flex items-center justify-between px-4 py-3 bg-[#1e151d] shadow-sm text-gray-100">
+      <div className="relative navbar-dropdown-container"> {/* Container for dropdown positioning */}
+        {/* Replaced 'btn btn-square btn-ghost' with Tailwind classes */}
+        <button
+          onClick={toggleDropdown}
+          className="p-2 rounded-md hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500"
+          aria-label="Toggle navigation menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-6 w-6 stroke-current">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        {/* Replaced 'dropdown-content menu bg-base-200 rounded-box z-[1] w-64 p-2 shadow-sm -ml-2' */}
+        {isDropdownOpen && (
+          <ul className="absolute top-full left-0 mt-2 w-64 p-2 rounded-md shadow-lg bg-zinc-800 z-10">
+            <li><Link href="/gallery" className="block px-4 py-2 hover:bg-zinc-700 rounded-md">Gallery</Link></li>
+            <li><Link href="/about" className="block px-4 py-2 hover:bg-zinc-700 rounded-md">About</Link></li>
+            <li><Link href="/contacts" className="block px-4 py-2 hover:bg-zinc-700 rounded-md">Contact</Link></li>
           </ul>
-        </div>
+        )}
       </div>
 
-      <div className="flex-1 px-4">
-        <span className="text-xl font-bold">Sneaker Gallery</span>
+      <div className="flex-grow text-center">
+        <Link href="/" className="text-2xl font-bold tracking-tight">Sneaker Gallery</Link>
       </div>
 
-      <div className='px-4 flex-none'>
-        <label className="toggle text-base-content">
-          <input type="checkbox" value="pastel" className="theme-controller" />
-          <svg aria-label="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></g></svg>
-          <svg aria-label="sun" xmlns="http://www.w30/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></g></svg>
-        </label>
+      <div className="flex-none">
+        {/* Replaced DaisyUI 'toggle' with custom Tailwind toggle */}
       </div>
     </nav>
   );

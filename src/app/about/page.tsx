@@ -1,7 +1,7 @@
 // This file is a Server Component by default
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import AboutHeroClient from '@/app/about/AboutHeroClient';
+import AboutHeroClient from '@/components/AboutHeroClient';
 
 const AboutPage = () => {
   return (
