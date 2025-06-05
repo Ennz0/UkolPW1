@@ -21,7 +21,7 @@ const SneakerCard: React.FC<SneakerCardProps> = ({
   tags,
 }) => {
   return (
-    <div className="relative flex flex-col rounded-box overflow-hidden shadow-sm bg-[#120a11] w-96">
+    <div className="relative flex flex-col rounded-2xl overflow-hidden shadow-lg bg-[#120a11] w-96">
       <figure className="relative w-full h-64 overflow-hidden">
         <Image
           src={imageSrc}
